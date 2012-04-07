@@ -1,0 +1,4 @@
+<%- model_class = @atividade.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                               :default => "Nova #{model_class.model_name.human}") %></h1>
+<%= render :partial => 'form' %>

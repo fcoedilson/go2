@@ -1,0 +1,28 @@
+<h2>Change your password</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="control-group">
+    <%= f.label :password, "Nova senha", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :password_confirmation, "Confirmação da nova senha", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Mudar Senha", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                atividades_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+<%= render "links" %>
